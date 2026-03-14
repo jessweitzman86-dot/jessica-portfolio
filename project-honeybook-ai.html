@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HoneyBook: AI Onboarding — Jessica Weitzman</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #eee9e1; color: #1e1b18; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+    nav { padding: 32px 0 28px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-name { font-size: 1.45rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1e1b18; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: .78rem; color: #aaa; text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: #1e1b18; }
+    .back { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; color: #aaa; text-decoration: none; margin-bottom: 48px; transition: color .15s; }
+    .back:hover { color: #1e1b18; }
+    .project-label { font-size: .68rem; color: #aaa; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 14px; }
+    h1 { font-family: 'DM Sans', sans-serif; font-size: 2.2rem; font-weight: 400; letter-spacing: -.3px; margin-bottom: 10px; }
+    .project-meta { font-size: .78rem; color: #aaa; font-weight: 300; margin-bottom: 48px; }
+    .body-text { font-size: .9rem; line-height: 1.85; color: #444; font-weight: 300; margin-bottom: 32px; max-width: 640px; }
+    .screens { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+    .screen-lbl { font-size: .62rem; color: #bbb; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    .screen-lbl.after { color: #8855ee; }
+    .screen-img { width: 100%; border-radius: 6px; border: 1px solid #ddd; display: block; }
+    .screen-cap { font-size: .7rem; color: #bbb; font-style: italic; margin-top: 6px; line-height: 1.5; }
+    .note { font-size: .85rem; line-height: 1.8; color: #666; font-weight: 300; background: #e8e3db; border-radius: 6px; padding: 20px 22px; margin-bottom: 80px; }
+    .note strong { font-weight: 500; color: #333; }
+    footer { padding: 24px 0; border-top: 1px solid #ccc8c0; font-size: .72rem; color: #bbb; display: flex; justify-content: space-between; }
+    footer a { color: #aaa; text-decoration: none; }
+    footer a:hover { color: #1e1b18; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="nav-name" href="index.html">Jessica Weitzman</a>
+      <div class="nav-links">
+        <a href="Jessica_Weitzman_Resume.html">Resume</a>
+        <a href="mailto:jlweitzman86@gmail.com">jlweitzman86@gmail.com</a>
+      </div>
+    </nav>
+
+    <a class="back" href="index.html">← Back</a>
+
+    <p class="project-label">HoneyBook &nbsp;/&nbsp; 2024–25</p>
+    <h1>HoneyBook: AI Onboarding</h1>
+    <p class="project-meta">Design Director &nbsp;·&nbsp; Product Design, AI</p>
+
+    <p class="body-text">We replaced a static onboarding questionnaire with a conversational AI flow that learns in real time what a new trialer needs to commit to during setup, and knows when to scale the experience back. The AI guides users through building their first real business document, adapting depth and pacing based on how they respond.</p>
+
+    <div class="screens">
+      <div>
+        <p class="screen-lbl">Before</p>
+        <img class="screen-img" src="before_screen.jpeg" alt="Before"/>
+        <p class="screen-cap">Static Q&A collecting business data — not helping users experience the product's value.</p>
+      </div>
+      <div>
+        <p class="screen-lbl after">After</p>
+        <img class="screen-img" src="after_screen.jpeg" alt="After"/>
+        <p class="screen-cap">AI-assisted flow building a real document with the user — surfacing value immediately.</p>
+      </div>
+    </div>
+
+    <div class="note"><strong>Key insight —</strong> Onboarding success isn't about collecting data, it's about helping users experience core value as fast as possible. Integrating generative AI let us constantly optimise for commitment and scale back at the right moments.</div>
+
+    <footer>
+      <span>Jessica Weitzman &copy; 2025</span>
+      <a href="mailto:jlweitzman86@gmail.com">jlweitzman86@gmail.com</a>
+    </footer>
+  </div>
+</body>
+</html>
