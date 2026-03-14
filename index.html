@@ -12,252 +12,175 @@
       font-family: 'Inter', sans-serif;
       background: #fff;
       color: #111;
-      font-size: 14px;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── CONTAINER ── */
     .wrap {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 48px;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      padding: 28px 0;
+      padding: 32px 0 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #eee;
-      margin-bottom: 48px;
     }
-    .nav-name { font-weight: 500; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-name {
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .5px;
+      color: #111;
+      text-decoration: none;
+    }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a { font-size: .82rem; color: #999; text-decoration: none; transition: color .15s; }
+    .nav-links a {
+      font-size: .78rem;
+      color: #aaa;
+      text-decoration: none;
+      transition: color .15s;
+    }
     .nav-links a:hover { color: #111; }
 
-    /* ── INTRO ── */
+    /* INTRO */
     .intro {
-      margin-bottom: 48px;
-      max-width: 520px;
+      padding: 56px 0 64px;
+      max-width: 560px;
     }
     .intro p {
-      font-size: .88rem;
+      font-size: 1rem;
       line-height: 1.8;
       color: #111;
+      font-weight: 300;
+    }
+
+    /* PROJECT LIST */
+    .project-list {
+      border-top: 1px solid #e8e8e8;
+      margin-bottom: 96px;
+    }
+
+    .project-row {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid #e8e8e8;
+      text-decoration: none;
+      color: inherit;
+      transition: background .15s;
+      margin: 0 -48px;
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+    .project-row:hover { background: #f9f9f9; }
+    .project-row:hover .row-arrow { opacity: 1; transform: translateX(3px); }
+
+    .row-num {
+      font-size: .72rem;
+      color: #bbb;
       font-weight: 400;
+      min-width: 24px;
+      flex-shrink: 0;
     }
 
-    /* ── GRID ── */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-bottom: 80px;
+    .row-title {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #111;
+      flex: 1;
+      letter-spacing: -.1px;
     }
 
-    /* ── CARD ── */
-    .card {
-      cursor: pointer;
-      display: block;
-      border: none;
-      background: none;
-      text-align: left;
-      padding: 0;
-      width: 100%;
+    .row-meta {
+      font-size: .75rem;
+      color: #aaa;
+      font-weight: 300;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-    .card-img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      overflow: hidden;
-      background: #f5f5f5;
-      border-radius: 6px;
-      margin-bottom: 12px;
-    }
-    .card-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .35s ease;
-    }
-    .card:hover .card-img img { transform: scale(1.03); }
 
-    .cover-novi {
-      background: linear-gradient(135deg, #5244e8, #e05a8a);
-      display: flex; align-items: center; justify-content: center;
+    .row-arrow {
+      font-size: .8rem;
+      color: #bbb;
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity .15s, transform .15s;
     }
-    .cover-novi span { font-size: 1.8rem; font-weight: 400; color: rgba(255,255,255,.9); letter-spacing: 2px; }
 
-    .card-title { font-size: .88rem; font-weight: 500; color: #111; margin-bottom: 3px; }
-    .card-meta  { font-size: .75rem; color: #aaa; font-weight: 300; }
-
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       padding: 24px 0;
-      border-top: 1px solid #eee;
-      font-size: .75rem;
+      border-top: 1px solid #e8e8e8;
+      font-size: .72rem;
       color: #bbb;
       display: flex;
       justify-content: space-between;
     }
-    footer a { color: #999; text-decoration: none; }
+    footer a { color: #aaa; text-decoration: none; }
     footer a:hover { color: #111; }
-
-    /* ── MODAL OVERLAY ── */
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.45);
-      z-index: 100;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 48px 24px;
-      overflow-y: auto;
-    }
-    .overlay.open { display: flex; }
-
-    .modal {
-      background: #fff;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 700px;
-      padding: 40px;
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px; right: 24px;
-      background: none; border: none;
-      font-size: 1.2rem;
-      color: #bbb;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .modal-close:hover { color: #111; }
-
-    .modal-label {
-      font-size: .68rem;
-      color: #aaa;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .modal h2 {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #111;
-      margin-bottom: 18px;
-      letter-spacing: -.2px;
-    }
-    .modal-text {
-      font-size: .85rem;
-      line-height: 1.85;
-      color: #555;
-      font-weight: 300;
-      margin-bottom: 28px;
-    }
-
-    .screens {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .screen-lbl {
-      font-size: .62rem; color: #bbb;
-      text-transform: uppercase; letter-spacing: 1.5px;
-      margin-bottom: 6px;
-    }
-    .screen-lbl.after { color: #8855ee; }
-    .screen-img { width: 100%; border-radius: 4px; border: 1px solid #eee; display: block; }
-    .screen-cap { font-size: .7rem; color: #bbb; font-style: italic; margin-top: 5px; line-height: 1.5; }
-
-    .tgrid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-    .tgrid img { width: 100%; border-radius: 3px; border: 1px solid #eee; display: block; }
-
-    .note {
-      font-size: .82rem; line-height: 1.78;
-      color: #666; font-weight: 300;
-      background: #f7f7f7;
-      border-radius: 6px;
-      padding: 16px 18px;
-    }
-    .note strong { font-weight: 500; color: #333; }
   </style>
 </head>
 <body>
 
   <div class="wrap">
     <nav>
-      <span class="nav-name">Jessica Weitzman</span>
+      <a class="nav-name" href="index.html">Jessica Weitzman</a>
       <div class="nav-links">
-        <a href="#">Work</a>
         <a href="Jessica_Weitzman_Resume.html">Resume</a>
         <a href="mailto:jlweitzman86@gmail.com">jlweitzman86@gmail.com</a>
       </div>
     </nav>
 
     <div class="intro">
-      <p>Design leader with 10+ years building and scaling multi-disciplinary teams across consumer mobile, AI-driven products, and large-scale digital ecosystems. Currently Design Director at HoneyBook, previously at Meta.</p>
+      <p>Design leader with 12+ years building and scaling multi-disciplinary teams across consumer mobile, AI-driven products, and large-scale digital ecosystems. Currently Design Director at HoneyBook, previously at Meta and Wix.</p>
     </div>
 
-    <div class="grid">
+    <div class="project-list">
 
-      <button class="card" onclick="openModal('honeybook')">
-        <div class="card-img">
-          <img src="honeybook_cover.jpeg" alt="HoneyBook AI Onboarding"/>
-        </div>
-        <div class="card-title">AI-Powered Onboarding</div>
-        <div class="card-meta">HoneyBook &nbsp;·&nbsp; Design Director &nbsp;·&nbsp; 2024–25</div>
-      </button>
+      <a class="project-row" href="project-honeybook.html">
+        <span class="row-num">01</span>
+        <span class="row-title">AI-Powered Onboarding</span>
+        <span class="row-meta">HoneyBook &nbsp;·&nbsp; 2024–25</span>
+        <span class="row-arrow">→</span>
+      </a>
 
-      <button class="card" onclick="openModal('novi')">
-        <div class="card-img">
-          <img src="novi_cover.png" alt="Novi Customer Care"/>
-        </div>
-        <div class="card-title">Novi Customer Care</div>
-        <div class="card-meta">Meta &nbsp;·&nbsp; Content Design Manager &nbsp;·&nbsp; 2018–24</div>
-      </button>
+      <a class="project-row" href="project-novi.html">
+        <span class="row-num">02</span>
+        <span class="row-title">Novi Customer Care</span>
+        <span class="row-meta">Meta &nbsp;·&nbsp; 2021–23</span>
+        <span class="row-arrow">→</span>
+      </a>
 
-      <button class="card" onclick="openModal('fblite')">
-        <div class="card-img">
-          <img src="facebook_lite_cover.png" alt="Facebook Lite"/>
-        </div>
-        <div class="card-title">Facebook Lite</div>
-        <div class="card-meta">Meta &nbsp;·&nbsp; Content Design Manager &nbsp;·&nbsp; 2018–24</div>
-      </button>
+      <a class="project-row" href="project-fblite.html">
+        <span class="row-num">03</span>
+        <span class="row-title">Facebook Lite</span>
+        <span class="row-meta">Meta &nbsp;·&nbsp; 2018–24</span>
+        <span class="row-arrow">→</span>
+      </a>
 
-      <button class="card" onclick="openModal('allscout')">
-        <div class="card-img">
-          <img src="allscout_cover.png" alt="All Scout"/>
-        </div>
-        <div class="card-title">All Scout</div>
-        <div class="card-meta">Personal project &nbsp;·&nbsp; Vibe coding &nbsp;·&nbsp; 2025</div>
-      </button>
+      <a class="project-row" href="project-allscout.html">
+        <span class="row-num">04</span>
+        <span class="row-title">All Scout</span>
+        <span class="row-meta">Personal project &nbsp;·&nbsp; 2025</span>
+        <span class="row-arrow">→</span>
+      </a>
 
-      <button class="card" onclick="openModal('wix')">
-        <div class="card-img">
-          <img src="wix_cover.png" alt="Wix Business Templates"/>
-        </div>
-        <div class="card-title">Business Templates</div>
-        <div class="card-meta">Wix.com &nbsp;·&nbsp; Design &amp; Content Manager &nbsp;·&nbsp; 2013–18</div>
-      </button>
+      <a class="project-row" href="project-wix.html">
+        <span class="row-num">05</span>
+        <span class="row-title">Business Templates</span>
+        <span class="row-meta">Wix.com &nbsp;·&nbsp; 2013–18</span>
+        <span class="row-arrow">→</span>
+      </a>
 
-      <button class="card" onclick="openModal('brazil')">
-        <div class="card-img">
-          <img src="brazil_cover.png" alt="Brazil Localisation"/>
-        </div>
-        <div class="card-title">Brazil &amp; France Localisation</div>
-        <div class="card-meta">Wix.com &nbsp;·&nbsp; Design &amp; Content Manager &nbsp;·&nbsp; 2013–18</div>
-      </button>
+      <a class="project-row" href="project-brazil.html">
+        <span class="row-num">06</span>
+        <span class="row-title">Brazil &amp; France Localisation</span>
+        <span class="row-meta">Wix.com &nbsp;·&nbsp; 2013–18</span>
+        <span class="row-arrow">→</span>
+      </a>
 
     </div>
 
@@ -266,99 +189,6 @@
       <a href="mailto:jlweitzman86@gmail.com">jlweitzman86@gmail.com</a>
     </footer>
   </div>
-
-  <!-- MODALS -->
-  <div class="overlay" id="overlay" onclick="closeOnBg(event)">
-    <div class="modal" id="modal-content"></div>
-  </div>
-
-  <!-- MODAL TEMPLATES (hidden) -->
-  <template id="tpl-honeybook">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="modal-label">HoneyBook &nbsp;/&nbsp; 2024–25</p>
-    <h2>AI-Powered Onboarding</h2>
-    <p class="modal-text">We replaced a static onboarding questionnaire with a conversational AI flow that learns in real time what a new trialer needs to commit to during setup, and knows when to scale the experience back. The AI guides users through building their first real business document, adapting depth and pacing based on how they respond.</p>
-    <div class="screens">
-      <div>
-        <p class="screen-lbl">Before</p>
-        <img class="screen-img" src="before_screen.jpeg" alt="Before"/>
-        <p class="screen-cap">Static Q&A collecting business data — not helping users experience the product's value.</p>
-      </div>
-      <div>
-        <p class="screen-lbl after">After</p>
-        <img class="screen-img" src="after_screen.jpeg" alt="After"/>
-        <p class="screen-cap">AI-assisted flow building a real document with the user — surfacing value immediately.</p>
-      </div>
-    </div>
-    <div class="note"><strong>Key insight —</strong> Onboarding success isn't about collecting data, it's about helping users experience core value as fast as possible. Integrating generative AI let us constantly optimise for commitment and scale back at the right moments.</div>
-  </template>
-
-  <template id="tpl-fblite">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="modal-label">Meta &nbsp;/&nbsp; 2018–24</p>
-    <h2>Facebook Lite</h2>
-    <p class="modal-text">Facebook Lite was initially built to give users with device, network, and data restrictions access to Facebook without the worry of excessive charges or a disappointing experience. In reality the app was very limited — the interface wouldn't have looked out of place alongside a basic mobile website. The opportunity was to close that gap: transforming Lite from a bare-bones fallback into a genuinely useful, well-considered product for the hundreds of millions of people relying on it as their primary way to access Facebook.</p>
-    <img src="facebook_lite_cover.png" alt="Facebook Lite evolution 2015–2019" style="width:100%;border-radius:6px;border:1px solid #eee;margin-bottom:24px;"/>
-    <div class="note"><strong>The challenge —</strong> Designing for constrained environments requires stripping everything back to what actually matters. Every decision — language, hierarchy, interaction — had to work for users on slow networks, low-end devices, and limited data plans, while still feeling like a product worth using.</div>
-  </template>
-
-  <template id="tpl-novi">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="modal-label">Meta &nbsp;/&nbsp; 2018–24</p>
-    <h2>Novi Customer Care</h2>
-    <p class="modal-text">Novi was Meta's cryptocurrency wallet — one of the most complex and regulated consumer financial products Facebook had ever shipped. I built and led the team responsible for the entire customer support experience: taxonomy, support flows, issue triaging, and the language systems users encountered when something went wrong with their money.</p>
-    <div class="note"><strong>The challenge —</strong> Crypto support is uniquely high-stakes. Users deal with real money, irreversible transactions, and regulatory constraints. Building the taxonomy meant mapping every failure state before launch, then designing language that could de-escalate anxiety while remaining legally precise.</div>
-  </template>
-
-  <template id="tpl-allscout">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="modal-label">Personal project &nbsp;/&nbsp; 2025</p>
-    <h2>All Scout</h2>
-    <p class="modal-text">A Vision AI platform I built as a vibe coding project — integrating with existing cameras (Ring, Vosker) to provide intelligent, plain-English detection alerts. Users describe what they want detected and the system alerts them when it happens. Built end-to-end: concept, design, and product using AI-assisted development.</p>
-    <div class="note"><strong>Why —</strong> I wanted to understand how AI-assisted development works from the inside — the decisions, constraints, and trade-offs — so I could better lead and collaborate with the engineers and AI teams I work with.</div>
-  </template>
-
-  <template id="tpl-brazil">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="modal-label">Wix.com &nbsp;/&nbsp; 2013–18</p>
-    <h2>Brazil &amp; France Localisation</h2>
-    <p class="modal-text">Brazil was one of Wix's largest markets — 11 million users, 2nd largest number of free users, 3rd largest number of premium subscribers — yet had zero localised templates. I led the strategy and execution to fix that. The process combined local market research, trend analysis, Brazilian search terms, and Wix performance data to identify exactly what templates were needed. From there I directed the design and content production of templates built specifically for the Brazilian market — combining local cultural relevance with Wix's design standards.</p>
-    <img src="brazil_04.png" alt="11 Unique Templates" style="width:100%;border-radius:6px;border:1px solid #eee;margin-bottom:16px;"/>
-    <img src="brazil_05.png" alt="Full Brazilian template library" style="width:100%;border-radius:6px;border:1px solid #eee;margin-bottom:24px;"/>
-    <div class="note"><strong>Impact —</strong> The Brazil localisation was a success, directly expanding Wix's reach and conversion in one of its biggest markets. The project became the blueprint for international expansion — and led directly to a second localisation initiative for France, producing a full library of French-market templates using the same data-led, content-and-design approach.</div>
-  </template>
-
-  <template id="tpl-wix">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <p class="modal-label">Wix.com &nbsp;/&nbsp; 2013–18</p>
-    <h2>Business Templates</h2>
-    <p class="modal-text">Oversaw the creation of Wix's entire business template library — the highest performing category on the platform, responsible for 30% of total template revenue. I directed a team of graphic designers across the full production process, from research and mood boarding through to launch, ensuring every template was not just visually strong but genuinely intuitive to use as a real business website.</p>
-    <div class="tgrid">
-      <img src="wix_04.png" alt="Real estate"/><img src="wix_08.png" alt="Conference"/><img src="wix_06.png" alt="Wedding"/>
-      <img src="wix_09.png" alt="Belle Weddings"/><img src="wix_07.png" alt="Events"/><img src="wix_05.png" alt="Tech"/>
-      <img src="wix_01.png" alt="Marketing"/><img src="wix_03.png" alt="Coming soon"/><img src="wix_02.png" alt="Under construction"/>
-    </div>
-    <div class="note"><strong>Highlight —</strong> Identified a gap in the market and created an entirely new Events category from scratch. It became Wix's second best performing template category, driving significant new revenue and expanding the platform's reach into the events industry.</div>
-  </template>
-
-  <script>
-    function openModal(id) {
-      const tpl = document.getElementById('tpl-' + id);
-      const modal = document.getElementById('modal-content');
-      modal.innerHTML = '';
-      modal.appendChild(tpl.content.cloneNode(true));
-      document.getElementById('overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      document.getElementById('overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function closeOnBg(e) {
-      if (e.target === document.getElementById('overlay')) closeModal();
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  </script>
 
 </body>
 </html>
