@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jessica Weitzman,Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ebebeb;
+      color: #1c1c1c;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 40px auto;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 228px 1fr;
+      grid-template-rows: auto 1px auto 1px auto;
+      grid-template-areas:
+        "name-row     name-row"
+        "rule-top     rule-top"
+        "sidebar-top  header"
+        "rule         rule"
+        "sidebar-main main";
+      box-shadow: 0 8px 32px rgba(0,0,0,.10);
+    }
+
+    /* ── Name row (full width) ── */
+    .name-row {
+      grid-area: name-row;
+      padding: 38px 46px 30px;
+    }
+
+    .rule-top {
+      grid-area: rule-top;
+      background: #e0cefc;
+    }
+
+    /* ── Sidebar top ── */
+    .sidebar-top {
+      grid-area: sidebar-top;
+      background: #f2eaff;
+      padding: 30px 26px 30px;
+    }
+
+    /* ── Header ── */
+    .header {
+      grid-area: header;
+      padding: 30px 46px 30px;
+    }
+
+    /* ── Rule ── */
+    .rule {
+      grid-area: rule;
+      background: #e0cefc;
+    }
+
+    /* ── Sidebar main ── */
+    .sidebar-main {
+      grid-area: sidebar-main;
+      background: #f2eaff;
+      padding: 30px 26px 48px;
+      border-right: 1px solid #e0cefc;
+    }
+
+    /* ── Main ── */
+    .main {
+      grid-area: main;
+      padding: 30px 46px 52px;
+    }
+
+    /* NAME */
+    .name {
+      font-size: 2.9rem;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    .name .first {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    .name .last {
+      font-weight: 300;
+    }
+
+    .subtitle {
+      font-size: .63rem;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #8b68cc;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .about-label {
+      font-size: .58rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #8b68cc;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .about-text {
+      font-size: .84rem;
+      line-height: 1.74;
+      color: #3a3a3a;
+    }
+
+    /* ── Sidebar labels ── */
+    .s-label {
+      font-size: .58rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #8b68cc;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-section { margin-bottom: 24px; }
+    .sidebar-section:last-child { margin-bottom: 0; }
+
+    /* Contact */
+    .contact-list { list-style: none; }
+    .contact-list li {
+      font-size: .79rem;
+      color: #2a2a2a;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      line-height: 1.4;
+    }
+    .contact-list li svg {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: #a488d8;
+    }
+
+    /* Skill / Language lists */
+    .item-list { list-style: none; }
+    .item-list li {
+      font-size: .8rem;
+      color: #2a2a2a;
+      padding: 2px 0 2px 13px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .item-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #8855ee;
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+
+    /* Education */
+    .edu-name   { font-size: .82rem; font-weight: 600; color: #1c1c1c; line-height: 1.4; }
+    .edu-degree { font-size: .77rem; color: #555; margin-top: 2px; }
+    .edu-year   { font-size: .71rem; color: #8b68cc; font-weight: 600; margin-top: 4px; }
+
+    /* ── Experience ── */
+    .exp-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin-bottom: 28px;
+    }
+
+    .job {
+      padding-left: 18px;
+      border-left: 2px solid #8855ee;
+      margin-bottom: 28px;
+    }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .job-title {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #1c1c1c;
+    }
+    .job-dates {
+      font-size: .74rem;
+      color: #888;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .job-company {
+      font-size: .79rem;
+      font-style: italic;
+      color: #666;
+      margin: 2px 0 9px;
+    }
+    .job-intro {
+      font-size: .81rem;
+      line-height: 1.7;
+      color: #3a3a3a;
+      margin-bottom: 8px;
+    }
+    .job ul { list-style: disc; padding-left: 15px; }
+    .job ul li {
+      font-size: .81rem;
+      line-height: 1.68;
+      color: #3a3a3a;
+      margin-bottom: 4px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; max-width: 100%; }
+    }
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAME ROW -->
+  <div class="name-row">
+    <div class="name">
+      <span class="first">Jessica</span> <span class="last">Weitzman</span>
+    </div>
+    <div class="subtitle">Design Director &nbsp;|&nbsp; UX &amp; Product Design Leader</div>
+  </div>
+
+  <!-- RULE TOP -->
+  <div class="rule-top"></div>
+
+  <!-- SIDEBAR TOP -->
+  <div class="sidebar-top">
+    <div class="s-label">Contact</div>
+    <ul class="contact-list">
+      <li>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.37 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +972-526-372-922
+      </li>
+      <li>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        jlweitzman86@gmail.com
+      </li>
+      <li>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <a href="https://jessweitzman86-dot.github.io/jessica-portfolio/" style="color:inherit;text-decoration:none;">My Portfolio</a>
+      </li>
+      <li>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Tel Aviv, Israel
+      </li>
+    </ul>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="about-label">About me</div>
+    <p class="about-text">Design leader with 10+ years of experience building and scaling multi-disciplinary design teams across consumer mobile, AI-driven products, and large-scale digital ecosystems. Proven track record of growing high-performing UX organizations, influencing executive strategy, and shipping intuitive consumer experiences at scale.</p>
+  </div>
+
+  <!-- RULE -->
+  <div class="rule"></div>
+
+  <!-- SIDEBAR MAIN -->
+  <div class="sidebar-main">
+
+    <div class="sidebar-section">
+      <div class="s-label">Skills</div>
+      <ul class="item-list">
+        <li>UX Leadership</li>
+        <li>Product Design</li>
+        <li>Content Design</li>
+        <li>Marketing Design</li>
+        <li>Design Strategy</li>
+        <li>Team Building &amp; Hiring</li>
+        <li>Cross-functional Leadership</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="s-label">Languages</div>
+      <ul class="item-list">
+        <li>English,Fluent</li>
+        <li>Hebrew,Fluent</li>
+        <li>French,Intermediate</li>
+        <li>Spanish,Intermediate</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="s-label">Education</div>
+      <div class="edu-name">University of Birmingham, England</div>
+      <div class="edu-degree">BA Politics, French &amp; Spanish</div>
+      <div class="edu-year">2005 – 2010</div>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="exp-heading">Experience</div>
+
+    <!-- HoneyBook -->
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Design Director</span>
+        <span class="job-dates">June 2024 – Present</span>
+      </div>
+      <div class="job-company">HoneyBook</div>
+      <p class="job-intro">Leading a team of Product, Marketing and Content Designers across both Growth and AI teams.</p>
+      <ul>
+        <li>Driving the integration of generative AI into shipped consumer-facing features,leading HoneyBook's AI incubator teams end-to-end from strategy through execution, and influencing executive decision-making on the direction of AI-powered product experiences.</li>
+        <li>Managing the Growth product design team, establishing design frameworks and systemic thinking to deliver a new simplified home experience and chat-based onboarding,directly tied to trial user activation and conversion OKRs.</li>
+        <li>Drove end-to-end marketing design for major campaigns,including the Year in Review and January campaign, owning landing pages, marketing assets, product experience, and script editing as the key decision-maker on creative direction.</li>
+        <li>Led message testing and data-informed iteration on the main marketing landing page, using user analytics to sharpen positioning and improve conversion.</li>
+        <li>Actively scaling the team through open hiring for Content and Marketing Designer roles, while driving team health and culture across the full design organization.</li>
+      </ul>
+    </div>
+
+    <!-- Meta -->
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Content Design Manager, Financial Integrity</span>
+        <span class="job-dates">2018 – 2024</span>
+      </div>
+      <div class="job-company">Meta</div>
+      <p class="job-intro">Led Content Design for Financial Integrity products at Meta,a mobile-first platform serving billions of users globally,driving UX strategy and systemic design thinking to optimize customer support experiences at scale.</p>
+      <ul>
+        <li>Managed a team of content designers shaping language, communication systems, and design standards for core Facebook mobile products, including Meta Customer Support and NFTs.</li>
+        <li>Developed strategy and led a cross-functional UX team (Product Design, Content Design, UXR) for Meta's first launch of crypto-based payment products in Customer Support,driving alignment across engineering, product, and executive stakeholders.</li>
+        <li>Mentored and developed team members, building clear career pathways and enabling the team to deliver at the highest level.</li>
+        <li>Partnered closely with engineering leads, UX researchers, and data scientists to validate design decisions against OKRs and user analytics, ensuring measurable business impact.</li>
+      </ul>
+    </div>
+
+    <!-- Wix -->
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Design &amp; Content Manager</span>
+        <span class="job-dates">2013 – 2018</span>
+      </div>
+      <div class="job-company">Wix.com</div>
+      <p class="job-intro">Led a team of content strategists, designers and QA specialists to design and build Wix's core product (website templates).</p>
+      <ul>
+        <li>Leveraged quantitative and qualitative data to analyze user behavior and shape future product roadmaps.</li>
+        <li>Adapted templates for international markets and led the company's expansion into the event industry vertical.</li>
+        <li>Defined tone of voice, oversaw content strategy and microcopy across the product.</li>
+      </ul>
+    </div>
+
+    <!-- BDO -->
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Corporate Finance Analyst</span>
+        <span class="job-dates">2011 – 2013</span>
+      </div>
+      <div class="job-company">BDO Ziv Haft</div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
