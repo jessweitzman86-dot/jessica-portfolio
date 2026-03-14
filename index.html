@@ -4,123 +4,133 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jessica Weitzman</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #111;
+      background: #eee9e1;
+      color: #1e1b18;
       -webkit-font-smoothing: antialiased;
     }
 
     .wrap {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 48px;
+      padding: 0 64px;
     }
 
     /* NAV */
     nav {
-      padding: 32px 0 28px;
+      padding: 36px 0 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .nav-name {
-      font-size: .85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
       font-weight: 500;
       letter-spacing: .5px;
-      color: #111;
+      color: #1e1b18;
       text-decoration: none;
     }
     .nav-links { display: flex; gap: 28px; }
     .nav-links a {
-      font-size: .78rem;
-      color: #aaa;
+      font-size: .75rem;
+      color: #999;
       text-decoration: none;
       transition: color .15s;
     }
-    .nav-links a:hover { color: #111; }
+    .nav-links a:hover { color: #1e1b18; }
 
     /* INTRO */
     .intro {
-      padding: 56px 0 64px;
-      max-width: 560px;
+      padding: 60px 0 72px;
+      max-width: 520px;
     }
     .intro p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #111;
+      font-size: .92rem;
+      line-height: 1.85;
+      color: #1e1b18;
       font-weight: 300;
     }
 
     /* PROJECT LIST */
     .project-list {
-      border-top: 1px solid #e8e8e8;
-      margin-bottom: 96px;
+      margin-bottom: 100px;
     }
 
     .project-row {
       display: flex;
-      align-items: baseline;
-      gap: 24px;
-      padding: 22px 0;
-      border-bottom: 1px solid #e8e8e8;
+      align-items: center;
+      gap: 0;
+      padding: 20px 0;
+      border-top: 1px solid #ccc8c0;
       text-decoration: none;
       color: inherit;
-      transition: background .15s;
-      margin: 0 -48px;
-      padding-left: 48px;
-      padding-right: 48px;
+      transition: opacity .15s;
     }
-    .project-row:hover { background: #f9f9f9; }
-    .project-row:hover .row-arrow { opacity: 1; transform: translateX(3px); }
+    .project-list .project-row:last-child {
+      border-bottom: 1px solid #ccc8c0;
+    }
+    .project-row:hover { opacity: .65; }
 
+    /* Circle arrow icon */
+    .row-icon {
+      flex-shrink: 0;
+      width: 80px;
+      display: flex;
+      align-items: center;
+    }
+    .row-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    /* Number */
     .row-num {
-      font-size: .72rem;
-      color: #bbb;
-      font-weight: 400;
-      min-width: 24px;
       flex-shrink: 0;
+      width: 80px;
+      font-family: 'Inter', sans-serif;
+      font-size: .78rem;
+      color: #888;
+      font-weight: 400;
+      letter-spacing: .5px;
     }
 
+    /* Title */
     .row-title {
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: #111;
       flex: 1;
-      letter-spacing: -.1px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: #1e1b18;
+      letter-spacing: .1px;
     }
 
-    .row-meta {
+    /* Tags */
+    .row-tags {
+      flex-shrink: 0;
+      font-family: 'Inter', sans-serif;
       font-size: .75rem;
-      color: #aaa;
+      color: #888;
       font-weight: 300;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .row-arrow {
-      font-size: .8rem;
-      color: #bbb;
-      flex-shrink: 0;
-      opacity: 0;
-      transition: opacity .15s, transform .15s;
+      text-align: right;
     }
 
     /* FOOTER */
     footer {
       padding: 24px 0;
-      border-top: 1px solid #e8e8e8;
+      border-top: 1px solid #ccc8c0;
       font-size: .72rem;
-      color: #bbb;
+      color: #aaa;
       display: flex;
       justify-content: space-between;
     }
-    footer a { color: #aaa; text-decoration: none; }
-    footer a:hover { color: #111; }
+    footer a { color: #999; text-decoration: none; }
+    footer a:hover { color: #1e1b18; }
   </style>
 </head>
 <body>
@@ -141,45 +151,81 @@
     <div class="project-list">
 
       <a class="project-row" href="project-honeybook.html">
-        <span class="row-num">01</span>
+        <span class="row-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="#1e1b18" stroke-width="1"/>
+            <line x1="10" y1="18" x2="26" y2="18" stroke="#1e1b18" stroke-width="1"/>
+            <polyline points="20,13 26,18 20,23" stroke="#1e1b18" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="row-num">[01]</span>
         <span class="row-title">AI-Powered Onboarding</span>
-        <span class="row-meta">HoneyBook &nbsp;·&nbsp; 2024–25</span>
-        <span class="row-arrow">→</span>
+        <span class="row-tags">[Product Design, AI]</span>
       </a>
 
       <a class="project-row" href="project-novi.html">
-        <span class="row-num">02</span>
+        <span class="row-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="#1e1b18" stroke-width="1"/>
+            <line x1="10" y1="18" x2="26" y2="18" stroke="#1e1b18" stroke-width="1"/>
+            <polyline points="20,13 26,18 20,23" stroke="#1e1b18" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="row-num">[02]</span>
         <span class="row-title">Novi Customer Care</span>
-        <span class="row-meta">Meta &nbsp;·&nbsp; 2021–23</span>
-        <span class="row-arrow">→</span>
+        <span class="row-tags">[Content Design, UX Strategy]</span>
       </a>
 
       <a class="project-row" href="project-fblite.html">
-        <span class="row-num">03</span>
+        <span class="row-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="#1e1b18" stroke-width="1"/>
+            <line x1="10" y1="18" x2="26" y2="18" stroke="#1e1b18" stroke-width="1"/>
+            <polyline points="20,13 26,18 20,23" stroke="#1e1b18" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="row-num">[03]</span>
         <span class="row-title">Facebook Lite</span>
-        <span class="row-meta">Meta &nbsp;·&nbsp; 2018–24</span>
-        <span class="row-arrow">→</span>
+        <span class="row-tags">[Content Design, Product Strategy]</span>
       </a>
 
       <a class="project-row" href="project-allscout.html">
-        <span class="row-num">04</span>
+        <span class="row-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="#1e1b18" stroke-width="1"/>
+            <line x1="10" y1="18" x2="26" y2="18" stroke="#1e1b18" stroke-width="1"/>
+            <polyline points="20,13 26,18 20,23" stroke="#1e1b18" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="row-num">[04]</span>
         <span class="row-title">All Scout</span>
-        <span class="row-meta">Personal project &nbsp;·&nbsp; 2025</span>
-        <span class="row-arrow">→</span>
+        <span class="row-tags">[Product Design, Vibe Coding]</span>
       </a>
 
       <a class="project-row" href="project-wix.html">
-        <span class="row-num">05</span>
+        <span class="row-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="#1e1b18" stroke-width="1"/>
+            <line x1="10" y1="18" x2="26" y2="18" stroke="#1e1b18" stroke-width="1"/>
+            <polyline points="20,13 26,18 20,23" stroke="#1e1b18" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="row-num">[05]</span>
         <span class="row-title">Business Templates</span>
-        <span class="row-meta">Wix.com &nbsp;·&nbsp; 2013–18</span>
-        <span class="row-arrow">→</span>
+        <span class="row-tags">[Design Direction, Content Strategy]</span>
       </a>
 
       <a class="project-row" href="project-brazil.html">
-        <span class="row-num">06</span>
+        <span class="row-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="#1e1b18" stroke-width="1"/>
+            <line x1="10" y1="18" x2="26" y2="18" stroke="#1e1b18" stroke-width="1"/>
+            <polyline points="20,13 26,18 20,23" stroke="#1e1b18" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="row-num">[06]</span>
         <span class="row-title">Brazil &amp; France Localisation</span>
-        <span class="row-meta">Wix.com &nbsp;·&nbsp; 2013–18</span>
-        <span class="row-arrow">→</span>
+        <span class="row-tags">[Design Direction, Market Strategy]</span>
       </a>
 
     </div>
