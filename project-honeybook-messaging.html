@@ -27,6 +27,32 @@
     footer { padding: 24px 0; border-top: 1px solid #ccc8c0; font-size: .72rem; color: #bbb; display: flex; justify-content: space-between; }
     footer a { color: #aaa; text-decoration: none; }
     footer a:hover { color: #1e1b18; }
+
+    /* Project nav */
+    .proj-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0 48px;
+      border-top: 1px solid #ccc8c0;
+      margin-top: 0;
+    }
+    .proj-nav a {
+      font-size: .82rem;
+      color: #888;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: color .15s;
+      max-width: 40%;
+    }
+    .proj-nav a:hover { color: #1e1b18; }
+    .proj-nav .nav-dir { font-size: .65rem; text-transform: uppercase; letter-spacing: 1.2px; color: #bbb; }
+    .proj-nav a:hover .nav-dir { color: #888; }
+    .proj-nav .nav-title { font-size: .88rem; }
+    .proj-nav .next { text-align: right; margin-left: auto; }
+    .proj-nav .spacer { flex: 1; }
   </style>
 </head>
 <body>
@@ -57,6 +83,12 @@
 
     <div class="note"><strong>Impact —</strong> The findings from this work directly shaped HoneyBook's positioning strategy and are now a major track in Q2 2026 — informing how the product, brand, and growth teams approach audience targeting and acquisition going forward.</div>
 
+
+    <div class="proj-nav">
+      <a href="project-honeybook-improvements.html" class="prev"><span class="nav-dir">← Previous</span><span class="nav-title">HoneyBook: Onboarding Improvements</span></a>
+      
+      <a href="project-novi.html" class="next"><span class="nav-dir">Next →</span><span class="nav-title">Meta: Novi Care</span></a>
+    </div>
     <footer>
       <span>Jessica Weitzman &copy; 2025</span>
       <a href="mailto:jlweitzman86@gmail.com">jlweitzman86@gmail.com</a>

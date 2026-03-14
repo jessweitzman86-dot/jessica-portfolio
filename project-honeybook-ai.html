@@ -30,6 +30,32 @@
     footer { padding: 24px 0; border-top: 1px solid #ccc8c0; font-size: .72rem; color: #bbb; display: flex; justify-content: space-between; }
     footer a { color: #aaa; text-decoration: none; }
     footer a:hover { color: #1e1b18; }
+
+    /* Project nav */
+    .proj-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0 48px;
+      border-top: 1px solid #ccc8c0;
+      margin-top: 0;
+    }
+    .proj-nav a {
+      font-size: .82rem;
+      color: #888;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: color .15s;
+      max-width: 40%;
+    }
+    .proj-nav a:hover { color: #1e1b18; }
+    .proj-nav .nav-dir { font-size: .65rem; text-transform: uppercase; letter-spacing: 1.2px; color: #bbb; }
+    .proj-nav a:hover .nav-dir { color: #888; }
+    .proj-nav .nav-title { font-size: .88rem; }
+    .proj-nav .next { text-align: right; margin-left: auto; }
+    .proj-nav .spacer { flex: 1; }
   </style>
 </head>
 <body>
@@ -65,6 +91,12 @@
 
     <div class="note"><strong>Key insight —</strong> Onboarding success isn't about collecting data, it's about helping users experience core value as fast as possible. Integrating generative AI let us constantly optimise for commitment and scale back at the right moments.</div>
 
+
+    <div class="proj-nav">
+      
+      <span class="spacer"></span>
+      <a href="project-honeybook-improvements.html" class="next"><span class="nav-dir">Next →</span><span class="nav-title">HoneyBook: Onboarding Improvements</span></a>
+    </div>
     <footer>
       <span>Jessica Weitzman &copy; 2025</span>
       <a href="mailto:jlweitzman86@gmail.com">jlweitzman86@gmail.com</a>
